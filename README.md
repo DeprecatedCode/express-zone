@@ -23,6 +23,7 @@ The init method takes two arguments, the first is the Express app, and the secon
 
 		/**
 		 * Do Normal Express Routing, but on the zone.
+		 */
 		zone.get('', function(req, res) {
 			res.send("Hello to you too!");
 		});
