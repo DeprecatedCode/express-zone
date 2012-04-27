@@ -4,39 +4,39 @@ Zones for Express
 Zones replaces the normal routing area of your Express application to make it more compartmentalized. In essense, all it does is virtualize all routing after the specified zone path. To use, just replace the normal routing section in your app.js (app.get etc) with the following:
 
 ```javascript
-	/**
-	 * Use Express Zones
-	 */
-	var zone = require('express-zone').init(app, __dirname + '/zones');
-	zone("/hello-there", "hello");
-	zone("", "main");
+/**
+ * Use Express Zones
+ */
+var zone = require('express-zone').init(app, __dirname + '/zones');
+zone("/hello-there", "hello");
+zone("", "main");
 ```
 
 The init method takes two arguments, the first is the Express app, and the second is the directory containing the zones. Each zone is a directory containing a zone.js file, in this example ./zones/hello/zone.js:
 
 ```javascript
+/**
+ * Sample Zone
+ * @author Nate Ferrero
+ */
+module.exports = function(zone) {
+
 	/**
-	 * Sample Zone
-	 * @author Nate Ferrero
+	 * Do Normal Express Routing, but on the zone.
 	 */
-	module.exports = function(zone) {
+	zone.get('', function(req, res) {
+		res.send("Hello to you too!");
+	});
 
-		/**
-		 * Do Normal Express Routing, but on the zone.
-		 */
-		zone.get('', function(req, res) {
-			res.send("Hello to you too!");
-		});
+	zone.get('/test', function(req, res) {
+		res.send("Hello test!");
+	});
 
-		zone.get('/test', function(req, res) {
-			res.send("Hello test!");
-		});
+	zone.get('/test/apple', function(req, res) {
+		res.send("Hello apple!");
+	});
 
-		zone.get('/test/apple', function(req, res) {
-			res.send("Hello apple!");
-		});
-
-	}
+}
 ```
 
 Then, run your app and access the following routes:
