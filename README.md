@@ -3,15 +3,18 @@ Zones for Express
 
 Zones replaces the normal routing area of your Express application to make it more compartmentalized. In essense, all it does is virtualize all routing after the specified zone path. To use, just replace the normal routing section in your app.js (app.get etc) with the following:
 
+```javascript
 	/**
 	 * Use Express Zones
 	 */
 	var zone = require('express-zone').init(app, __dirname + '/zones');
 	zone("/hello-there", "hello");
 	zone("", "main");
+```
 
 The init method takes two arguments, the first is the Express app, and the second is the folder housing the zones. Each zone is a folder containing a zone.js file, for example ./zones/hello/zone.js:
 
+```javascript
 	/**
 	 * Sample Zone
 	 * @author Nate Ferrero
@@ -33,6 +36,7 @@ The init method takes two arguments, the first is the Express app, and the secon
 		});
 
 	}
+```
 
 Then, run your app and access the following routes:
 
