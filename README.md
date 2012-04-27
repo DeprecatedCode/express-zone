@@ -12,7 +12,7 @@ Zones replaces the normal routing area of your Express application to make it mo
 	zone("", "main");
 ```
 
-The init method takes two arguments, the first is the Express app, and the second is the folder housing the zones. Each zone is a folder containing a zone.js file, for example ./zones/hello/zone.js:
+The init method takes two arguments, the first is the Express app, and the second is the directory containing the zones. Each zone is a directory containing a zone.js file, in this example ./zones/hello/zone.js:
 
 ```javascript
 	/**
