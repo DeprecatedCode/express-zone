@@ -1,0 +1,22 @@
+{
+  "name": "express-zone",
+  "description": "Routing zones for express",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "express": ">= 2"
+  }
+  "homepage": "https://github.com/NateFerrero/express-zone",
+  "author": "Nate Ferrero (http://nateferrero.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NateFerrero/express-zone"
+  },
+  "main": "./index.js",
+  "licenses": [
+    {
+      "type": "MIT +no-false-attribs",
+      "url": "http://github.com/isaacs/npm/raw/master/LICENSE"
+    }
+  ]
+}
