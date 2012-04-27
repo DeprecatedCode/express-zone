@@ -1,7 +1,5 @@
-express-zone
-============
-
 Zones for Express
+=================
 
 Zones replaces the normal routing area of your Express application to make it more compartmentalized. In essense, all it does is virtualize all routing after the specified zone path. To use, just replace the normal routing section in your app.js (app.get etc) with the following:
 
