@@ -34,6 +34,12 @@ module.exports.init = function(app, root) {
 			if(subpath.length && subpath[0] != '/')
 				throw new Error("Zone subpath if not empty must begin with /");
 
+			/**
+			 * Ensure some path is set
+			 */
+			if(!subpath.length && !path.length)
+				subpath = '/';
+
 			return path + subpath;
 		}
 
