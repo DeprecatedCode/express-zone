@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/NateFerrero/express-zone.png)](http://travis-ci.org/NateFerrero/express-zone)
 Zones for Express
 =================
 
